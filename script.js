@@ -11,6 +11,7 @@ enterBtn.addEventListener("click", () => {
     landing.classList.add("hidden");
     sorryScreen.classList.remove("hidden");
 
+    // Play background music (fix autoplay)
     bgMusic.play().catch(() => {
       alert("Tap anywhere to enable music 🎵");
     });
