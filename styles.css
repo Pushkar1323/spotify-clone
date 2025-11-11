@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap');
 
 * {
   margin: 0;
@@ -7,60 +7,57 @@
 }
 
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #121212, #000);
+  color: white;
 }
 
-/* === LANDING PAGE === */
+/* ===== Landing Page ===== */
 .landing {
+  height: 100vh;
+  width: 100%;
   display: flex;
-  width: 90%;
-  max-width: 1000px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-  background: linear-gradient(135deg, #121212, #181818);
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #000, #111, #0a0a0a);
   animation: fadeIn 1.5s ease-in-out;
 }
 
-.left, .right {
-  flex: 1;
+.content {
+  text-align: center;
   padding: 40px;
-}
-
-.left {
-  background: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  background: rgba(25, 25, 25, 0.7);
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
 .logo {
   color: #1db954;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #bbb;
 }
 
 input {
-  width: 100%;
+  width: 70%;
   padding: 12px;
   border-radius: 10px;
   border: none;
   font-size: 16px;
   background: #333;
   color: #fff;
+  margin-bottom: 15px;
 }
 
 button {
-  margin-top: 15px;
-  padding: 12px 20px;
+  padding: 12px 24px;
   background-color: #1db954;
   border: none;
   border-radius: 25px;
@@ -75,97 +72,52 @@ button:hover {
   transform: scale(1.05);
 }
 
-.right {
-  background: url('https://i.imgur.com/zAqLk4z.jpeg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-shadow: 0 0 20px rgba(0,0,0,0.6);
-}
-
-.right h1 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-.right p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
 .hint {
-  margin-top: 20px;
+  margin-top: 10px;
   font-style: italic;
-  color: #ccc;
+  color: #888;
+}
+
+/* ===== Sorry Page ===== */
+.sorry {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle, #1b1b1b, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas#particleCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.msg {
+  position: absolute;
+  color: #ff8da1;
+  font-size: 1.2rem;
+  font-family: 'Great Vibes', cursive;
+  text-shadow: 0 0 15px #ff5c8d;
+  animation: floatUp 6s linear forwards;
+  opacity: 0.9;
+  z-index: 2;
 }
 
 .hidden {
   display: none;
 }
 
-/* === SORRY PAGE === */
-.sorry {
-  width: 100%;
-  height: 100vh;
-  background: radial-gradient(circle, #121212, #000);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Floating Heart Center */
-.heart-center {
-  font-size: 6rem;
-  animation: beat 1.2s infinite ease-in-out;
-  color: #ff6b6b;
-  text-shadow: 0 0 20px #ff6b6b, 0 0 40px #ff4757;
-  z-index: 10;
-}
-
-.sorry-text {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  background: linear-gradient(90deg, #ff6b6b, #ffc3a0, #ff6b6b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  margin-top: 20px;
-  text-shadow: 0 0 15px #ff5c5c;
-  z-index: 10;
-}
-
-#floatingMsgs {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0; left: 0;
-  overflow: hidden;
-}
-
-.msg {
-  position: absolute;
-  color: #ff9090;
-  font-family: 'Poppins', sans-serif;
-  text-shadow: 0 0 10px #ff5c5c;
-  font-size: 1.2rem;
-  animation: floatUp 6s linear forwards;
-  opacity: 0.8;
-}
-
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
+  from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes beat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
 }
 
 @keyframes floatUp {
   0% { transform: translateY(100vh); opacity: 1; }
   100% { transform: translateY(-10vh); opacity: 0; }
-  }
+}
