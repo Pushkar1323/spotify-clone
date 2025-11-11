@@ -8,22 +8,30 @@
 </head>
 <body>
   <!-- Landing Page -->
-  <div class="landing" id="landing">
+  <section class="landing" id="landing">
     <div class="content">
-      <h1 class="logo">MyMusic</h1>
-      <p class="tagline">Feel your music 🎧</p>
-      <input type="text" id="roomCode" placeholder="Enter Room Code" />
-      <button id="enterBtn">Enter Room</button>
-      <p class="hint">💡 Hint: Try code <b>143</b></p>
+      <div class="left">
+        <h1 class="logo">MyMusic</h1>
+        <p class="tagline">Feel the Vibe. Explore your Music 🎧</p>
+        <input type="text" id="roomCode" placeholder="Enter Room Code" />
+        <button id="enterBtn">Enter Room</button>
+        <p class="hint">Hint: Try code <b>143</b></p>
+      </div>
+      <div class="right">
+        <div class="overlay">
+          <h2>Welcome to My Spotify Clone 🎶</h2>
+          <p>Discover. Listen. Feel the Beat 💚</p>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- Sorry Page -->
-  <div class="sorry hidden" id="sorryScreen">
+  <section class="sorry hidden" id="sorryScreen">
     <audio id="bgMusic" src="bgm.mp3" loop></audio>
-    <h1 class="centerText">I’m Sorry 🥺😭😭</h1>
+    <h1 class="sorryTitle">I’m Sorry 🥺😭😭</h1>
     <div id="floatingMsgs"></div>
-  </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
