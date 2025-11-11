@@ -32,14 +32,16 @@ enterBtn.addEventListener("click", () => {
       const el = document.createElement("div");
       el.classList.add("msg");
       el.textContent = msgs[Math.floor(Math.random() * msgs.length)];
-      el.style.left = Math.random() * 90 + "%";
-      el.style.animationDuration = 3 + Math.random() * 2 + "s";
+      // Randomize position across full width and height
+      el.style.left = Math.random() * 95 + "%";
+      el.style.animationDuration = 3 + Math.random() * 3 + "s";
       el.style.fontSize = 14 + Math.random() * 10 + "px";
+      el.style.transform = `translateX(${Math.random() * 50 - 25}px)`;
       floatingMsgs.appendChild(el);
-      setTimeout(() => el.remove(), 5000);
+      setTimeout(() => el.remove(), 7000);
     }
 
-    setInterval(createMsg, 350);
+    setInterval(createMsg, 300);
   } else {
     alert("Wrong code 😅");
   }
