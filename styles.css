@@ -43,8 +43,9 @@ body {
 
 .logo {
   color: #1db954;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
 
 input {
@@ -53,8 +54,9 @@ input {
   border-radius: 10px;
   border: none;
   font-size: 16px;
-  background: #333;
+  background: #222;
   color: #fff;
+  outline: none;
 }
 
 button {
@@ -75,27 +77,39 @@ button:hover {
 }
 
 .right {
+  position: relative;
   background: url('https://i.imgur.com/zAqLk4z.jpeg') center/cover no-repeat;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  backdrop-filter: brightness(0.7);
+  align-items: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(5px);
 }
 
 .right h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .right p {
   font-size: 1.1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #ccc;
 }
 
 .hint {
   margin-top: 20px;
   font-style: italic;
-  color: #ccc;
+  color: #1db954;
+  font-weight: 500;
 }
 
 .hidden {
@@ -106,10 +120,9 @@ button:hover {
 .sorry {
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle at center, #0a0a0a, #000);
+  background: radial-gradient(circle at center, #0d0d0d, #000);
   position: relative;
   overflow: hidden;
-  text-align: center;
 }
 
 .centerText {
@@ -117,21 +130,21 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3.5rem;
-  color: #ff7b7b;
-  text-shadow: 0 0 15px #ff1f5a, 0 0 30px #ff1f5a;
+  font-size: 3.8rem;
+  color: #ff9aa2;
+  text-shadow: 0 0 15px #ff7b7b, 0 0 30px #ff4c4c;
   animation: glowPulse 2s infinite alternate;
 }
 
 @keyframes glowPulse {
-  from { text-shadow: 0 0 10px #ff1f5a, 0 0 20px #ff1f5a; }
-  to { text-shadow: 0 0 25px #ff1f5a, 0 0 50px #ff1f5a; }
+  from { text-shadow: 0 0 10px #ff7b7b, 0 0 20px #ff4c4c; }
+  to { text-shadow: 0 0 25px #ff4c4c, 0 0 60px #ff1f5a; }
 }
 
 .msg {
   position: absolute;
-  color: #ff9f9f;
-  font-size: 1.2rem;
+  color: #ffb3b3;
+  font-size: 1.3rem;
   text-shadow: 0 0 10px #ff4c4c;
   animation: floatUp 5s linear forwards;
   opacity: 0.9;
@@ -139,10 +152,10 @@ button:hover {
 
 @keyframes floatUp {
   0% { transform: translateY(100vh); opacity: 1; }
-  100% { transform: translateY(-10vh); opacity: 0.5; }
+  100% { transform: translateY(-10vh); opacity: 0.6; }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
-}
+  }
