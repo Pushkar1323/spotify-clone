@@ -1,153 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spotify Clone - Room 143</title>
-
-<style>
-/* ---------- GLOBAL ---------- */
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
-body{
-  background:#121212;color:#fff;overflow:hidden;height:100vh;
-}
-a{text-decoration:none;color:#1DB954}
-
-/* ---------- SPOTIFY LAYOUT ---------- */
-.container{display:flex;height:100vh;width:100%}
-.sidebar{
-  width:220px;background:#000;padding:20px;display:flex;flex-direction:column;
-}
-.sidebar h2{color:#1DB954;margin-bottom:30px;font-size:1.6rem}
-.sidebar input{
-  background:#222;border:none;border-radius:6px;color:#fff;padding:10px;margin-bottom:10px
-}
-.sidebar button{
-  background:#1DB954;border:none;border-radius:6px;color:#000;font-weight:bold;padding:10px;cursor:pointer
-}
-.main{
-  flex:1;background:linear-gradient(180deg,#181818,#000);
-  padding:40px;overflow:auto;
-}
-.main h1{font-size:2rem;margin-bottom:10px}
-.main p{color:#ccc;margin-top:10px}
-
-/* ---------- SORRY SCREEN ---------- */
-.sorry-screen{
-  position:fixed;inset:0;
-  background:radial-gradient(circle at top,#2e003e,#000);
-  display:flex;align-items:center;justify-content:center;flex-direction:column;
-  animation:fadeIn 1s ease forwards;overflow:hidden;
-}
-.sorry-card{
-  text-align:center;padding:40px 50px;border-radius:20px;
-  background:rgba(255,255,255,0.08);
-  box-shadow:0 0 40px rgba(0,0,0,0.5);
-  backdrop-filter:blur(5px);
-}
-.sorry-card h1{font-size:3rem;color:#fff;margin-bottom:10px}
-.sorry-card p{color:#f8d7da;margin-top:5px}
-.emoji{font-size:3rem;margin-bottom:10px}
-
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
-.float-msg{
-  position:fixed;bottom:-50px;
-  font-weight:bold;color:#ffccd5;font-size:1.1rem;
-  animation:floatUp linear forwards;
-  text-shadow:0 0 10px rgba(255,200,200,0.6);
-}
-@keyframes floatUp{
-  0%{transform:translateY(0);opacity:1}
-  100%{transform:translateY(-120vh);opacity:0}
-}
-
-/* ---------- HEART PARTICLES ---------- */
-.heart{
-  position:fixed;
-  color:#ff4d6d;
-  font-size:1.5rem;
-  animation:floatHeart linear forwards;
-  opacity:0.8;
-}
-@keyframes floatHeart{
-  0%{transform:translateY(0) scale(1);opacity:1;}
-  100%{transform:translateY(-120vh) scale(1.5);opacity:0;}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Clone - Room 143</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-<div class="container">
-  <div class="sidebar">
-    <h2>MyMusic</h2>
-    <input id="roomCode" type="text" placeholder="Enter Room Code">
-    <button id="enterBtn">Enter Room</button>
-  </div>
-  <div class="main">
-    <h1>Welcome to My Spotify Clone 🎵</h1>
-    <p>Explore playlists, chill beats, and your favorite tracks here.</p>
-    <p style="margin-top:20px;color:gray;">Hint: Try code <b>143</b></p>
-  </div>
-</div>
-
-<audio id="bgAudio" src="bgm.mp3" loop preload="auto"></audio>
-
-<script>
-const btn=document.getElementById("enterBtn");
-const input=document.getElementById("roomCode");
-const audio=document.getElementById("bgAudio");
-
-btn.addEventListener("click",enterRoom);
-input.addEventListener("keydown",e=>{if(e.key==="Enter")enterRoom();});
-
-function enterRoom(){
-  const code=input.value.trim();
-  if(code==="143")showSorryScreen();
-  else alert("Wrong code! Try again 😅");
-}
-
-function showSorryScreen(){
-  document.body.innerHTML=`
-  <div class="sorry-screen">
-    <div class="sorry-card">
-      <div class="emoji">🥺😭😭</div>
-      <h1>I'm So Sorry</h1>
-      <p>I really didn’t mean to hurt you 💔</p>
-      <p>Please forgive me 🙏</p>
+  <div class="container">
+    <div class="sidebar">
+      <h2>MyMusic</h2>
+      <input id="roomCode" type="text" placeholder="Enter Room Code" />
+      <button id="enterBtn">Enter Room</button>
     </div>
-  </div>`;
-  audio.play().catch(()=>{});
-  
-  const messages=[
-    "I'm sorry 🥺","Please forgive me 😭","Mujhe maaf kardo 💔",
-    "I promise to do better 💖","I miss you 🥺",
-    "It won’t happen again 😭","You mean a lot to me 💞"
-  ];
-  // Floating messages
-  setInterval(()=>{
-    const msg=document.createElement("div");
-    msg.className="float-msg";
-    msg.textContent=messages[Math.floor(Math.random()*messages.length)];
-    msg.style.left=Math.random()*window.innerWidth+"px";
-    msg.style.animationDuration=(4+Math.random()*3)+"s";
-    document.body.appendChild(msg);
-    msg.addEventListener("animationend",()=>msg.remove());
-  },500);
 
-  // Floating hearts
-  setInterval(()=>{
-    const heart=document.createElement("div");
-    heart.className="heart";
-    heart.textContent="💖";
-    heart.style.left=Math.random()*window.innerWidth+"px";
-    heart.style.bottom="-20px";
-    heart.style.fontSize=(1+Math.random()*2)+"rem";
-    heart.style.animationDuration=(4+Math.random()*4)+"s";
-    document.body.appendChild(heart);
-    heart.addEventListener("animationend",()=>heart.remove());
-  },300);
-}
-</script>
+    <div class="main">
+      <h1>Welcome to My Spotify Clone 🎵</h1>
+      <p>Explore playlists, chill beats, and your favorite tracks here.</p>
+      <p class="hint">Hint: Try code <b>143</b></p>
+    </div>
+  </div>
+
+  <audio id="bgAudio" src="bgm.mp3" preload="auto" loop></audio>
+  <script src="script.js"></script>
 </body>
-  </html>
+</html>
