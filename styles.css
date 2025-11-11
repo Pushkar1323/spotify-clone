@@ -43,9 +43,8 @@ body {
 
 .logo {
   color: #1db954;
-  font-size: 2.8rem;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 input {
@@ -54,9 +53,8 @@ input {
   border-radius: 10px;
   border: none;
   font-size: 16px;
-  background: #222;
+  background: #333;
   color: #fff;
-  outline: none;
 }
 
 button {
@@ -77,39 +75,23 @@ button:hover {
 }
 
 .right {
-  position: relative;
   background: url('https://i.imgur.com/zAqLk4z.jpeg') center/cover no-repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  backdrop-filter: brightness(0.7);
 }
 
-.overlay {
+.right h1, .right p {
   background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 15px;
-  text-align: center;
-  backdrop-filter: blur(5px);
-}
-
-.right h1 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-}
-
-.right p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #ccc;
+  padding: 8px 15px;
+  border-radius: 8px;
 }
 
 .hint {
   margin-top: 20px;
   font-style: italic;
-  color: #1db954;
-  font-weight: 500;
+  color: #ccc;
 }
 
 .hidden {
@@ -120,42 +102,42 @@ button:hover {
 .sorry {
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle at center, #0d0d0d, #000);
+  background: radial-gradient(circle, #1a1a1a, #000);
   position: relative;
   overflow: hidden;
 }
 
 .centerText {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3.8rem;
-  color: #ff9aa2;
-  text-shadow: 0 0 15px #ff7b7b, 0 0 30px #ff4c4c;
-  animation: glowPulse 2s infinite alternate;
+  font-size: 3rem;
+  color: #ff5f5f;
+  text-shadow: 0 0 15px #ff3c3c, 0 0 30px #ff0000;
+  animation: glow 2s infinite alternate;
 }
 
-@keyframes glowPulse {
-  from { text-shadow: 0 0 10px #ff7b7b, 0 0 20px #ff4c4c; }
-  to { text-shadow: 0 0 25px #ff4c4c, 0 0 60px #ff1f5a; }
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff3c3c, 0 0 30px #ff0000; }
+  to { text-shadow: 0 0 25px #ff7b7b, 0 0 60px #ff0000; }
 }
 
 .msg {
   position: absolute;
-  color: #ffb3b3;
-  font-size: 1.3rem;
+  color: #ff8080;
+  font-size: 1.2rem;
   text-shadow: 0 0 10px #ff4c4c;
-  animation: floatUp 5s linear forwards;
+  animation: floatUp 4s linear forwards;
   opacity: 0.9;
 }
 
 @keyframes floatUp {
   0% { transform: translateY(100vh); opacity: 1; }
-  100% { transform: translateY(-10vh); opacity: 0.6; }
+  100% { transform: translateY(-10vh); opacity: 0.8; }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
-  }
+    }
