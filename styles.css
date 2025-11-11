@@ -77,21 +77,30 @@ button:hover {
 .right {
   background: url('https://i.imgur.com/zAqLk4z.jpeg') center/cover no-repeat;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding-left: 50px;
-  backdrop-filter: brightness(0.7);
+  align-items: center;
+  text-align: center;
 }
 
-.right h1, .right p {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 8px 15px;
-  border-radius: 8px;
+.right .content {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.right h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.right p {
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 .hint {
-  margin-top: 20px;
+  margin-top: 15px;
   font-style: italic;
   color: #ccc;
 }
@@ -119,6 +128,7 @@ button:hover {
   text-shadow: 0 0 15px #ff7b7b, 0 0 40px #ff0000;
   animation: glow 2s infinite alternate;
   white-space: nowrap;
+  text-align: center;
 }
 
 @keyframes glow {
@@ -143,4 +153,4 @@ button:hover {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
-      }
+}
