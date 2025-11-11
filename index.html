@@ -3,25 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spotify Clone - Room 143</title>
+  <title>MyMusic 💚</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <h2>MyMusic</h2>
-      <input id="roomCode" type="text" placeholder="Enter Room Code" />
+  <!-- Landing Page -->
+  <div class="landing" id="landing">
+    <div class="left">
+      <h1 class="logo">MyMusic</h1>
+      <input type="text" id="roomCode" placeholder="Enter Room Code">
       <button id="enterBtn">Enter Room</button>
     </div>
-
-    <div class="main">
-      <h1>Welcome to My Spotify Clone 🎵</h1>
+    <div class="right">
+      <h1>Welcome to My Spotify Clone 🎶</h1>
       <p>Explore playlists, chill beats, and your favorite tracks here.</p>
       <p class="hint">Hint: Try code <b>143</b></p>
     </div>
   </div>
 
-  <audio id="bgAudio" src="bgm.mp3" preload="auto" loop></audio>
+  <!-- Sorry Page -->
+  <div class="sorry hidden" id="sorryScreen">
+    <audio id="bgMusic" src="bgm.mp3" loop></audio>
+    <h1 class="sorry-text">I’m really very sorry 🥺😭</h1>
+    <div id="floatingMsgs"></div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
