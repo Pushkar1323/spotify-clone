@@ -79,11 +79,13 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  padding-left: 50px;
   backdrop-filter: brightness(0.7);
 }
 
 .right h1, .right p {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   padding: 8px 15px;
   border-radius: 8px;
 }
@@ -102,7 +104,7 @@ button:hover {
 .sorry {
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle, #1a1a1a, #000);
+  background: radial-gradient(circle, #141414, #000);
   position: relative;
   overflow: hidden;
 }
@@ -112,24 +114,25 @@ button:hover {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: #ff5f5f;
-  text-shadow: 0 0 15px #ff3c3c, 0 0 30px #ff0000;
+  font-size: 3.5rem;
+  color: #ff6060;
+  text-shadow: 0 0 15px #ff7b7b, 0 0 40px #ff0000;
   animation: glow 2s infinite alternate;
+  white-space: nowrap;
 }
 
 @keyframes glow {
-  from { text-shadow: 0 0 10px #ff3c3c, 0 0 30px #ff0000; }
-  to { text-shadow: 0 0 25px #ff7b7b, 0 0 60px #ff0000; }
+  from { text-shadow: 0 0 15px #ff7b7b, 0 0 30px #ff0000; }
+  to { text-shadow: 0 0 30px #ffb3b3, 0 0 60px #ff0000; }
 }
 
 .msg {
   position: absolute;
   color: #ff8080;
   font-size: 1.2rem;
-  text-shadow: 0 0 10px #ff4c4c;
-  animation: floatUp 4s linear forwards;
-  opacity: 0.9;
+  text-shadow: 0 0 8px #ff4c4c;
+  animation: floatUp 5s linear forwards;
+  opacity: 0.95;
 }
 
 @keyframes floatUp {
@@ -140,4 +143,4 @@ button:hover {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
-    }
+      }
