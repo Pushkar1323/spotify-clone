@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #000;
+}
+.logo {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.logo span {
+  color: #1db954;
+}
+nav button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  margin-left: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+nav button:hover {
+  color: #1db954;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+  text-align: center;
+}
+.room-box {
+  margin-top: 20px;
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.room-box input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  width: 180px;
+  margin-right: 8px;
+}
+.room-box button {
+  background: #1db954;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.hint {
+  font-size: 0.9em;
+  color: #bbb;
+  margin-top: 8px;
+}
+
+/* Apology Screen */
+.hidden {
+  display: none;
+}
+#apologyScreen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #000 20%, #1b1b1b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+/* Heart animation */
+.heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  background: #ff2d55;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: #ff2d55;
+  border-radius: 50%;
+}
+.heart::before {
+  top: -50px;
+  left: 0;
+}
+.heart::after {
+  left: 50px;
+  top: 0;
+}
+@keyframes beat {
+  0%, 100% { transform: scale(1) rotate(-45deg); }
+  50% { transform: scale(1.2) rotate(-45deg); }
+}
+
+/* Center message */
+.apology-msg {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 30px;
+  color: #fff;
+  text-shadow: 0 0 20px #ff2d55;
+  font-weight: bold;
+}
+
+/* Floating sorrys */
+#floatingContainer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.floating {
+  position: absolute;
+  color: #ff5e8a;
+  font-weight: bold;
+  opacity: 0.8;
+  animation: floatUp linear forwards;
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}

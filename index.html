@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Spotify Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">My<span>Spot</span></div>
+    <nav>
+      <button>Home</button>
+      <button>Search</button>
+      <button>Your Library</button>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="intro">
+      <h1>Welcome to My Spotify Clone 🎧</h1>
+      <p>Listen to your favorite songs together.</p>
+
+      <div class="room-box">
+        <label>Enter Room Code</label>
+        <input type="text" id="roomCode" placeholder="Room code" />
+        <button id="joinBtn">Join Room</button>
+        <p class="hint">Hint: Try <b>142</b> 😏</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Hidden apology screen -->
+  <div id="apologyScreen" class="hidden">
+    <audio id="bgm" src="bgm.mp3" preload="auto"></audio>
+
+    <div class="heart"></div>
+    <div class="apology-msg">Mai Maafi Maangta Hu 😭🥺</div>
+    <div id="floatingContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
