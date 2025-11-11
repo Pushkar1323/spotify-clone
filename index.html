@@ -9,19 +9,21 @@
 <body>
   <!-- Landing Page -->
   <div class="landing" id="landing">
-    <div class="content">
+    <div class="left">
       <h1 class="logo">MyMusic</h1>
-      <p class="tagline">Where emotions meet rhythm 🎶</p>
       <input type="text" id="roomCode" placeholder="Enter Room Code">
       <button id="enterBtn">Enter Room</button>
-      <p class="hint">Hint: Try <b>143</b> 💚</p>
+    </div>
+    <div class="right">
+      <h1>Welcome to My Spotify Clone 🎶</h1>
+      <p>Feel the vibe, explore your music.</p>
+      <p class="hint">Hint: Try code <b>143</b></p>
     </div>
   </div>
 
   <!-- Sorry Page -->
   <div class="sorry hidden" id="sorryScreen">
     <audio id="bgMusic" src="bgm.mp3" loop></audio>
-    <canvas id="particleCanvas"></canvas>
     <div id="floatingMsgs"></div>
   </div>
 
