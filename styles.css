@@ -106,39 +106,40 @@ button:hover {
 .sorry {
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle, #1a1a1a, #000);
+  background: radial-gradient(circle at center, #0a0a0a, #000);
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
-.msg {
-  position: absolute;
-  color: #ff9494;
-  font-size: 1.3rem;
-  text-shadow: 0 0 12px #ff4c4c;
-  opacity: 0.95;
-  animation: floatAnim 6s ease-in-out infinite alternate;
-}
-
-@keyframes floatAnim {
-  from { transform: translateY(0px); }
-  to { transform: translateY(-50px); }
-}
-
-#centerMsg {
+.centerText {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem;
-  text-shadow: 0 0 25px #ff4c4c;
-  animation: heartBeat 1.4s infinite ease-in-out;
-  color: #ff7070;
+  font-size: 3.5rem;
+  color: #ff7b7b;
+  text-shadow: 0 0 15px #ff1f5a, 0 0 30px #ff1f5a;
+  animation: glowPulse 2s infinite alternate;
 }
 
-@keyframes heartBeat {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.2); }
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px #ff1f5a, 0 0 20px #ff1f5a; }
+  to { text-shadow: 0 0 25px #ff1f5a, 0 0 50px #ff1f5a; }
+}
+
+.msg {
+  position: absolute;
+  color: #ff9f9f;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px #ff4c4c;
+  animation: floatUp 5s linear forwards;
+  opacity: 0.9;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0.5; }
 }
 
 @keyframes fadeIn {
