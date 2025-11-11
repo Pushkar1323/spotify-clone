@@ -11,7 +11,7 @@ enterBtn.addEventListener("click", () => {
     landing.classList.add("hidden");
     sorryScreen.classList.remove("hidden");
 
-    // Play background music (fix autoplay)
+    // Play background music
     bgMusic.play().catch(() => {
       alert("Tap anywhere to enable music 🎵");
     });
@@ -32,7 +32,7 @@ enterBtn.addEventListener("click", () => {
       const el = document.createElement("div");
       el.classList.add("msg");
       el.textContent = msgs[Math.floor(Math.random() * msgs.length)];
-      el.style.left = Math.random() * 90 + "%";
+      el.style.left = Math.random() * 85 + "%";
       el.style.animationDuration = 3 + Math.random() * 2 + "s";
       el.style.fontSize = 18 + Math.random() * 8 + "px";
       floatingMsgs.appendChild(el);
