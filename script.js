@@ -11,9 +11,8 @@ enterBtn.addEventListener("click", () => {
     landing.classList.add("hidden");
     sorryScreen.classList.remove("hidden");
 
-    // Play background music (GitHub autoplay fix)
     bgMusic.play().catch(() => {
-      document.body.addEventListener("click", () => bgMusic.play(), { once: true });
+      alert("Tap anywhere to enable music 🎵");
     });
 
     const msgs = [
@@ -24,7 +23,7 @@ enterBtn.addEventListener("click", () => {
       "Forgive me please 🥺",
       "Main sach me sorry hu 😭",
       "Please talk to me again 💖",
-      "Sorry from my heart 🥺😭",
+      "Sorry from my heart 🥺",
       "😭😭 I’m so sorry 🥺"
     ];
 
@@ -36,10 +35,10 @@ enterBtn.addEventListener("click", () => {
       el.style.animationDuration = 3 + Math.random() * 2 + "s";
       el.style.fontSize = 18 + Math.random() * 8 + "px";
       floatingMsgs.appendChild(el);
-      setTimeout(() => el.remove(), 6000);
+      setTimeout(() => el.remove(), 5000);
     }
 
-    setInterval(createMsg, 300);
+    setInterval(createMsg, 400);
   } else {
     alert("Wrong code 😅");
   }
