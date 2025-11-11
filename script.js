@@ -38,7 +38,7 @@ enterBtn.addEventListener("click", () => {
       setTimeout(() => el.remove(), 5000);
     }
 
-    setInterval(createMsg, 200); // faster & continuous
+    setInterval(createMsg, 200);
   } else {
     alert("Wrong code 😅");
   }
