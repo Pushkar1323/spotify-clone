@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* Spotify Green Animated Glow */
     @keyframes moveGlow {
       0% { background-position: 0 0; }
       100% { background-position: 1000px 0; }
@@ -45,12 +44,12 @@
       display: flex;
       width: 90%;
       max-width: 950px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       border-radius: 20px;
       overflow: hidden;
       position: relative;
       z-index: 2;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     }
 
     .left {
@@ -106,12 +105,12 @@
       font-style: italic;
     }
 
-    /* ✅ Fixed Right Side (Single Clean Image, no overlay) */
+    /* 🟢 Clean gradient + pattern instead of text image */
     .right {
       flex: 1;
-      background-image: url('https://i.imgur.com/zAqLk4z.jpeg');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(180deg, #1db95433, #111),
+                  url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+      filter: brightness(0.8);
     }
 
     /* ===== Sorry Page ===== */
