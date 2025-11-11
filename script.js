@@ -28,20 +28,28 @@ enterBtn.addEventListener("click", () => {
       "😭😭 I’m so sorry 🥺"
     ];
 
+    // Start floating messages immediately
+    for (let i = 0; i < 20; i++) createMsg();
+    setInterval(createMsg, 300);
+
     function createMsg() {
       const el = document.createElement("div");
       el.classList.add("msg");
       el.textContent = msgs[Math.floor(Math.random() * msgs.length)];
-      // Randomize position across full width and height
-      el.style.left = Math.random() * 95 + "%";
-      el.style.animationDuration = 3 + Math.random() * 3 + "s";
-      el.style.fontSize = 14 + Math.random() * 10 + "px";
-      el.style.transform = `translateX(${Math.random() * 50 - 25}px)`;
-      floatingMsgs.appendChild(el);
-      setTimeout(() => el.remove(), 7000);
-    }
 
-    setInterval(createMsg, 300);
+      // Full screen spread (left 0% - 95%)
+      el.style.left = Math.random() * 95 + "%";
+
+      // Random horizontal drift (left or right)
+      el.style.transform = `translateX(${Math.random() * 100 - 50}px)`;
+
+      // Random speed and size
+      el.style.animationDuration = 3 + Math.random() * 3 + "s";
+      el.style.fontSize = 16 + Math.random() * 10 + "px";
+
+      floatingMsgs.appendChild(el);
+      setTimeout(() => el.remove(), 6000);
+    }
   } else {
     alert("Wrong code 😅");
   }
