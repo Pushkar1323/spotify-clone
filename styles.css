@@ -7,59 +7,56 @@
 }
 
 body {
-  background-color: #000;
+  background: #000;
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 
 /* ===== Landing Page ===== */
 .landing {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #111, #1b1b1b);
   display: flex;
-  width: 90%;
-  max-width: 1000px;
-  border-radius: 20px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #111, #181818);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.left, .right {
-  flex: 1;
-  padding: 40px;
-}
-
-.left {
-  background: #000;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(29, 185, 84, 0.3);
 }
 
 .logo {
   color: #1db954;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #ccc;
   margin-bottom: 20px;
 }
 
 input {
-  width: 100%;
+  width: 80%;
   padding: 12px;
   border-radius: 10px;
   border: none;
   font-size: 16px;
-  background: #333;
+  background: #222;
   color: #fff;
+  text-align: center;
 }
 
 button {
   margin-top: 15px;
-  padding: 12px 20px;
+  padding: 12px 25px;
   background-color: #1db954;
   border: none;
   border-radius: 25px;
@@ -74,72 +71,43 @@ button:hover {
   transform: scale(1.05);
 }
 
-.right {
-  background: url('https://i.imgur.com/zAqLk4z.jpeg') center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.right .content {
-  background: rgba(0, 0, 0, 0.55);
-  padding: 25px 30px;
-  border-radius: 12px;
-  max-width: 80%;
-}
-
-.right h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.right p {
-  font-size: 1.1rem;
-  line-height: 1.4;
-}
-
 .hint {
-  margin-top: 15px;
-  font-style: italic;
-  color: #ccc;
-}
-
-.hidden {
-  display: none;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #aaa;
 }
 
 /* ===== Sorry Page ===== */
 .sorry {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: radial-gradient(circle, #141414, #000);
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .centerText {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3.5rem;
-  color: #ff6060;
-  text-shadow: 0 0 15px #ff7b7b, 0 0 40px #ff0000;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: #ff5a5a;
+  text-shadow: 0 0 15px #ff7b7b, 0 0 35px #ff0000;
   animation: glow 2s infinite alternate;
-  white-space: nowrap;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 @keyframes glow {
   from { text-shadow: 0 0 15px #ff7b7b, 0 0 30px #ff0000; }
-  to { text-shadow: 0 0 30px #ffb3b3, 0 0 60px #ff0000; }
+  to { text-shadow: 0 0 35px #ffb3b3, 0 0 70px #ff0000; }
 }
 
 .msg {
   position: absolute;
   color: #ff8080;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-shadow: 0 0 8px #ff4c4c;
   animation: floatUp 5s linear forwards;
   opacity: 0.95;
@@ -147,10 +115,9 @@ button:hover {
 
 @keyframes floatUp {
   0% { transform: translateY(100vh); opacity: 1; }
-  100% { transform: translateY(-10vh); opacity: 0.8; }
+  100% { transform: translateY(-10vh); opacity: 0.7; }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+.hidden {
+  display: none;
 }
