@@ -11,8 +11,10 @@ enterBtn.addEventListener("click", () => {
     landing.classList.add("hidden");
     sorryScreen.classList.remove("hidden");
 
-    // Play music
-    bgMusic.play().catch(() => alert("Tap anywhere to enable music 🎵"));
+    // Play background music (autoplay fix)
+    bgMusic.play().catch(() => {
+      document.body.addEventListener("click", () => bgMusic.play(), { once: true });
+    });
 
     const msgs = [
       "I'm really sorry 🥺",
@@ -22,7 +24,7 @@ enterBtn.addEventListener("click", () => {
       "Forgive me please 🥺",
       "Main sach me sorry hu 😭",
       "Please talk to me again 💖",
-      "Sorry from my heart 🥺💔",
+      "Sorry from my heart 🥺😭",
       "😭😭 I’m so sorry 🥺"
     ];
 
@@ -31,15 +33,13 @@ enterBtn.addEventListener("click", () => {
       el.classList.add("msg");
       el.textContent = msgs[Math.floor(Math.random() * msgs.length)];
       el.style.left = Math.random() * 90 + "%";
-      el.style.top = Math.random() * 80 + "%";
-      el.style.animationDuration = 4 + Math.random() * 4 + "s";
-      el.style.fontSize = 18 + Math.random() * 10 + "px";
+      el.style.animationDuration = 3 + Math.random() * 2 + "s";
+      el.style.fontSize = 18 + Math.random() * 8 + "px";
       floatingMsgs.appendChild(el);
+      setTimeout(() => el.remove(), 6000);
     }
 
-    for (let i = 0; i < 30; i++) {
-      createMsg();
-    }
+    setInterval(createMsg, 300);
   } else {
     alert("Wrong code 😅");
   }
