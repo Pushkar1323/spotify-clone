@@ -11,7 +11,6 @@ enterBtn.addEventListener("click", () => {
     landing.classList.add("hidden");
     sorryScreen.classList.remove("hidden");
 
-    // Play background music after click (GitHub autoplay fix)
     bgMusic.play().catch(() => {
       alert("Tap anywhere to enable music 🎵");
     });
@@ -32,15 +31,14 @@ enterBtn.addEventListener("click", () => {
       const el = document.createElement("div");
       el.classList.add("msg");
       el.textContent = msgs[Math.floor(Math.random() * msgs.length)];
-      el.style.left = Math.random() * 95 + "%"; // random horizontal position
-      el.style.animationDuration = 3 + Math.random() * 2 + "s"; // faster float
+      el.style.left = Math.random() * 95 + "%";
+      el.style.animationDuration = 3 + Math.random() * 2 + "s";
       el.style.fontSize = 16 + Math.random() * 8 + "px";
       floatingMsgs.appendChild(el);
       setTimeout(() => el.remove(), 5000);
     }
 
-    // Start faster
-    setInterval(createMsg, 250);
+    setInterval(createMsg, 200); // faster & continuous
   } else {
     alert("Wrong code 😅");
   }
