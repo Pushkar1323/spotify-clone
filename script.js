@@ -11,10 +11,8 @@ enterBtn.addEventListener("click", () => {
     landing.classList.add("hidden");
     sorryScreen.classList.remove("hidden");
 
-    // Play background music after click (GitHub autoplay fix)
-    bgMusic.play().catch(() => {
-      alert("Tap anywhere to enable music 🎵");
-    });
+    // Play music
+    bgMusic.play().catch(() => alert("Tap anywhere to enable music 🎵"));
 
     const msgs = [
       "I'm really sorry 🥺",
@@ -33,13 +31,15 @@ enterBtn.addEventListener("click", () => {
       el.classList.add("msg");
       el.textContent = msgs[Math.floor(Math.random() * msgs.length)];
       el.style.left = Math.random() * 90 + "%";
-      el.style.animationDuration = 5 + Math.random() * 3 + "s";
-      el.style.fontSize = 18 + Math.random() * 8 + "px";
+      el.style.top = Math.random() * 80 + "%";
+      el.style.animationDuration = 4 + Math.random() * 4 + "s";
+      el.style.fontSize = 18 + Math.random() * 10 + "px";
       floatingMsgs.appendChild(el);
-      setTimeout(() => el.remove(), 7000);
     }
 
-    setInterval(createMsg, 500);
+    for (let i = 0; i < 30; i++) {
+      createMsg();
+    }
   } else {
     alert("Wrong code 😅");
   }
